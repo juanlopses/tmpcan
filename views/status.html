@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Status del Servidor</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: white; padding: 20px; }
+    .card { background: #222; padding: 10px; margin: 10px 0; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Status del Servidor</h1>
+  <div class="card">
+    <strong>Salas activas:</strong>
+    <ul>
+      <% rooms.forEach(room => { %>
+        <li><%= room %> - Ping host: <%= hostPings[room] %> ms</li>
+      <% }) %>
+    </ul>
+  </div>
+  <div class="card">
+    <strong>CPU:</strong> <%= cpu.map(c => c.toFixed(2)).join(', ') %>
+  </div>
+  <div class="card">
+    <strong>RAM:</strong> Total: <%= (memory.total / 1e6).toFixed(0) %> MB | Libre: <%= (memory.free / 1e6).toFixed(0) %> MB
+  </div>
+</body>
+</html>
