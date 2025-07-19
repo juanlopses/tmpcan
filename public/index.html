@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Live App</title>
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white p-6">
+  <div class="max-w-xl mx-auto space-y-4">
+    <h1 class="text-2xl font-bold">🎥 Iniciar o Unirse a Live</h1>
+    <input id="roomId" type="text" placeholder="ID de la sala" class="w-full p-2 rounded bg-gray-800">
+    <div class="flex gap-2">
+      <button onclick="createRoom()" class="bg-green-600 px-4 py-2 rounded">Crear Live</button>
+      <button onclick="joinRoom()" class="bg-blue-600 px-4 py-2 rounded">Unirse</button>
+    </div>
+    <p id="feedback" class="text-red-400"></p>
+  </div>
+</body>
+</html>
